@@ -96,6 +96,12 @@ framework:
     collect: false
   assets: ~
 
+knp_menu:
+  twig:
+    template: ShopsysFrameworkBundle:Admin/Menu:menu.html.twig
+  templating: false
+  default_renderer: twig
+
 monolog:
   channels: ["cron", "slow"]
   handlers:

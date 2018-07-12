@@ -6,6 +6,7 @@ parameters:
         ObjectCalisthenics\Sniffs\Files\FunctionLengthSniff:
             - '*/src/DataFixtures/*/*DataFixture.php'
             - '*/src/Form/Admin/*/*FormType.php'
+            - '*/src/Model/AdminNavigation/MenuBuilder.php'
             - '*/src/Model/Order/Preview/OrderPreviewCalculation.php'
             - '*/src/Model/Product/ProductVisibilityRepository.php'
             - '*/src/Controller/Admin/AdministratorController.php'

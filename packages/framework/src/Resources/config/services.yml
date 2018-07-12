@@ -3,6 +3,7 @@ imports:
 
 parameters:
   fp_js_form_validator.factory.class: Shopsys\FrameworkBundle\Form\JsFormValidatorFactory
+  knp_menu.factory_extension.routing.class: Shopsys\FrameworkBundle\Model\AdminNavigation\RoutingExtension
   prezent_doctrine_translatable.listener.class: Shopsys\FrameworkBundle\Model\Localization\TranslatableListener
   faker.seed: 1234
   shopsys.entity_extension.map: {}
@@ -114,6 +115,13 @@ services:
   Shopsys\FrameworkBundle\Component\Csv\CsvReader: ~
 
   Shopsys\FrameworkBundle\Component\Cron\Config\CronConfig: ~
+
+  Shopsys\FrameworkBundle\Model\AdminNavigation\MenuBuilder:
+    public: true
+    arguments:
+      $menuFactory: '@knp_menu.factory'
+    tags:
+      - { name: knp_menu.menu_builder, method: createMainMenu, alias: admin_main }
 
   Shopsys\FrameworkBundle\Model\Cart\Watcher\CartWatcherFacade:
     arguments:

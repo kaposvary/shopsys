@@ -1,0 +1,8 @@
+{% extends 'knp_menu.html.twig' %}
+
+{% block label %}
+    {% if item.extra('icon') is not null %}
+        <i class="svg svg-{{ item.extra('icon') }}"></i>
+    {% endif %}
+    {{ parent() }}
+{% endblock %}
