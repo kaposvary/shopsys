@@ -161,7 +161,7 @@ class MenuBuilder
         $articlesMenu->addChild('new', ['route' => 'admin_article_new', 'label' => t('New article'), 'display' => false]);
         $articlesMenu->addChild('edit', ['route' => 'admin_article_edit', 'label' => t('Editing article'), 'display' => false]);
 
-        $sliderMenu = $menu->addChild('slider', ['route' => 'admin_article_list', 'label' => t('Slider on main page')]);
+        $sliderMenu = $menu->addChild('slider', ['route' => 'admin_slider_list', 'label' => t('Slider on main page')]);
         $sliderMenu->addChild('new_page', ['route' => 'admin_slider_new', 'label' => t('New page'), 'display' => false]);
         $sliderMenu->addChild('edit_page', ['route' => 'admin_slider_edit', 'label' => t('Editing page'), 'display' => false]);
 
