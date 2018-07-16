@@ -144,7 +144,7 @@ class CustomerController extends AdminBaseController
             $this->getFlashMessageSender()->addErrorFlashTwig(t('Please check the correctness of all data filled.'));
         }
 
-        $this->breadcrumb->overrideLastItem(new MenuItem(t('Editing customer - %name%', ['%name%' => $user->getFullName()])));
+        $this->breadcrumb->overrideLastItem(t('Editing customer - %name%', ['%name%' => $user->getFullName()]));
 
         $orders = $this->orderFacade->getCustomerOrderList($user);
 

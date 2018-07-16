@@ -140,9 +140,7 @@ class AdministratorController extends AdminBaseController
             $this->getFlashMessageSender()->addErrorFlash(t('Please check the correctness of all data filled.'));
         }
 
-        $this->breadcrumb->overrideLastItem(
-            new MenuItem(t('Editing administrator - %name%', ['%name%' => $administrator->getRealName()]))
-        );
+        $this->breadcrumb->overrideLastItem(t('Editing administrator - %name%', ['%name%' => $administrator->getRealName()]));
 
         $lastAdminActivities = $this->administratorActivityFacade->getLastAdministratorActivities(
             $administrator,

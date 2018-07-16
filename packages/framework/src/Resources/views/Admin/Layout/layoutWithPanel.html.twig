@@ -15,10 +15,7 @@
 
         <div class="web__content">
             {% block breadcrumb %}
-                {{ render(controller('ShopsysFrameworkBundle:Admin/Breadcrumb:index', {
-                    route: getRoute(),
-                    parameters: getRouteParams()
-                } )) }}
+                {{ render(controller('ShopsysFrameworkBundle:Admin/Breadcrumb:index')) }}
             {% endblock %}
 
             <div class="mt15">

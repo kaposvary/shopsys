@@ -122,7 +122,7 @@ class TransportController extends AdminBaseController
             $this->getFlashMessageSender()->addErrorFlash(t('Please check the correctness of all data filled.'));
         }
 
-        $this->breadcrumb->overrideLastItem(new MenuItem(t('Editing shipping - %name%', ['%name%' => $transport->getName()])));
+        $this->breadcrumb->overrideLastItem(t('Editing shipping - %name%', ['%name%' => $transport->getName()]));
 
         return $this->render('@ShopsysFramework/Admin/Content/Transport/edit.html.twig', [
             'form' => $form->createView(),

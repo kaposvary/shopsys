@@ -108,7 +108,7 @@ class AdvertController extends AdminBaseController
             $this->getFlashMessageSender()->addErrorFlashTwig(t('Please check the correctness of all data filled.'));
         }
 
-        $this->breadcrumb->overrideLastItem(new MenuItem(t('Editing advertising - %name%', ['%name%' => $advert->getName()])));
+        $this->breadcrumb->overrideLastItem(t('Editing advertising - %name%', ['%name%' => $advert->getName()]));
 
         return $this->render('@ShopsysFramework/Admin/Content/Advert/edit.html.twig', [
             'form' => $form->createView(),

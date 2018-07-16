@@ -5,43 +5,31 @@ namespace Shopsys\FrameworkBundle\Model\AdminNavigation;
 class Breadcrumb
 {
     /**
-     * @var \Shopsys\FrameworkBundle\Model\AdminNavigation\MenuFactory
+     * @var string|null
      */
-    private $menuFactory;
+    protected $lastItemLabel;
 
     /**
-     * @var \Shopsys\FrameworkBundle\Model\AdminNavigation\MenuItem|null
+     * @param string $lastItemLabel
      */
-    private $overridingLastItem;
-
-    public function __construct(MenuFactory $menuFactory)
+    public function overrideLastItem(string $lastItemLabel): void
     {
-        $this->menuFactory = $menuFactory;
+        $this->lastItemLabel = $lastItemLabel;
     }
 
     /**
-     * @param \Shopsys\FrameworkBundle\Model\AdminNavigation\MenuItem $menuItem
+     * @return string
      */
-    public function overrideLastItem(MenuItem $menuItem)
+    public function getLastItemLabel(): string
     {
-        $this->overridingLastItem = $menuItem;
+        return $this->lastItemLabel;
     }
 
     /**
-     * @param \Symfony\Component\Routing\Route $route
-     * @param array|null $routeParameters
-     * @return \Shopsys\FrameworkBundle\Model\AdminNavigation\MenuItem[]
+     * @return bool
      */
-    public function getItems($route, $routeParameters)
+    public function isLastItemOverridden(): bool
     {
-        $menu = $this->menuFactory->createMenuWithAllowedItems();
-        $items = $menu->getMenuPath($route, $routeParameters);
-
-        if ($this->overridingLastItem !== null) {
-            array_pop($items);
-            $items[] = $this->overridingLastItem;
-        }
-
-        return $items;
+        return $this->lastItemLabel !== null;
     }
 }

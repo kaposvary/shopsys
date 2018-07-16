@@ -95,7 +95,7 @@ class BrandController extends AdminBaseController
             $this->getFlashMessageSender()->addErrorFlashTwig(t('Please check the correctness of all data filled.'));
         }
 
-        $this->breadcrumb->overrideLastItem(new MenuItem(t('Editing brand - %name%', ['%name%' => $brand->getName()])));
+        $this->breadcrumb->overrideLastItem(t('Editing brand - %name%', ['%name%' => $brand->getName()]));
 
         return $this->render('@ShopsysFramework/Admin/Content/Brand/edit.html.twig', [
             'form' => $form->createView(),

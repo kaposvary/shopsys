@@ -157,9 +157,7 @@ class SliderController extends AdminBaseController
             $this->getFlashMessageSender()->addErrorFlash(t('Please check the correctness of all data filled.'));
         }
 
-        $this->breadcrumb->overrideLastItem(
-            new MenuItem(t('Editing slider page - %name%', ['%name%' => $sliderItem->getName()]))
-        );
+        $this->breadcrumb->overrideLastItem(t('Editing slider page - %name%', ['%name%' => $sliderItem->getName()]));
 
         return $this->render('@ShopsysFramework/Admin/Content/Slider/edit.html.twig', [
             'form' => $form->createView(),

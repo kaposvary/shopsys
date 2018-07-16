@@ -103,7 +103,7 @@ class BestsellingProductController extends AdminBaseController
             $this->getFlashMessageSender()->addErrorFlashTwig(t('Please check the correctness of all data filled.'));
         }
 
-        $this->breadcrumb->overrideLastItem(new MenuItem($category->getName()));
+        $this->breadcrumb->overrideLastItem($category->getName());
 
         return $this->render('@ShopsysFramework/Admin/Content/BestsellingProduct/detail.html.twig', [
             'form' => $form->createView(),

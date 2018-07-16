@@ -145,7 +145,7 @@ class OrderController extends AdminBaseController
             $this->getFlashMessageSender()->addErrorFlash(t('Please check the correctness of all data filled.'));
         }
 
-        $this->breadcrumb->overrideLastItem(new MenuItem(t('Editing order - Nr. %number%', ['%number%' => $order->getNumber()])));
+        $this->breadcrumb->overrideLastItem(t('Editing order - Nr. %number%', ['%number%' => $order->getNumber()]));
 
         $orderItemTotalPricesById = $this->orderItemPriceCalculation->calculateTotalPricesIndexedById($order->getItems());
 

@@ -115,7 +115,7 @@ class ArticleController extends AdminBaseController
             $this->getFlashMessageSender()->addErrorFlashTwig(t('Please check the correctness of all data filled.'));
         }
 
-        $this->breadcrumb->overrideLastItem(new MenuItem(t('Editing article - %name%', ['%name%' => $article->getName()])));
+        $this->breadcrumb->overrideLastItem(t('Editing article - %name%', ['%name%' => $article->getName()]));
 
         return $this->render('@ShopsysFramework/Admin/Content/Article/edit.html.twig', [
             'form' => $form->createView(),

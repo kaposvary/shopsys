@@ -161,9 +161,7 @@ class ProductController extends AdminBaseController
             $this->getFlashMessageSender()->addErrorFlashTwig(t('Please check the correctness of all data filled.'));
         }
 
-        $this->breadcrumb->overrideLastItem(
-            new MenuItem(t('Editing product - %name%', ['%name%' => $this->productExtension->getProductDisplayName($product)]))
-        );
+        $this->breadcrumb->overrideLastItem(t('Editing product - %name%', ['%name%' => $this->productExtension->getProductDisplayName($product)]));
 
         $viewParameters = [
             'form' => $form->createView(),

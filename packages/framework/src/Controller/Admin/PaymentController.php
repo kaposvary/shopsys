@@ -122,7 +122,7 @@ class PaymentController extends AdminBaseController
             $this->getFlashMessageSender()->addErrorFlashTwig(t('Please check the correctness of all data filled.'));
         }
 
-        $this->breadcrumb->overrideLastItem(new MenuItem(t('Editing payment - %name%', ['%name%' => $payment->getName()])));
+        $this->breadcrumb->overrideLastItem(t('Editing payment - %name%', ['%name%' => $payment->getName()]));
 
         return $this->render('@ShopsysFramework/Admin/Content/Payment/edit.html.twig', [
             'form' => $form->createView(),

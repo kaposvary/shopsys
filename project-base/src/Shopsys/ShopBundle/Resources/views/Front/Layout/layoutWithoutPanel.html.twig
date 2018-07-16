@@ -4,7 +4,7 @@
     <div class="web__main">
         <div class="web__main__content js-main-content">
             {% block breadcrumb %}
-                {{ render(controller('ShopsysShopBundle:Front/Breadcrumb:index', { routeName: getRoute(), routeParameters: getRouteParams() } )) }}
+                {{ render(controller('ShopsysShopBundle:Front/Breadcrumb:index')) }}
             {% endblock %}
 
             {{ render(controller('ShopsysShopBundle:Front/FlashMessage:index')) }}
