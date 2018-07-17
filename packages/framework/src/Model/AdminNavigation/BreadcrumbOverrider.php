@@ -2,7 +2,7 @@
 
 namespace Shopsys\FrameworkBundle\Model\AdminNavigation;
 
-class Breadcrumb
+class BreadcrumbOverrider
 {
     /**
      * @var string|null

@@ -103,7 +103,7 @@ services:
       - '%shopsys.admin_navigation.config_filepath%'
       - '@security.authorization_checker'
 
-  Shopsys\FrameworkBundle\Model\AdminNavigation\Breadcrumb: ~
+  Shopsys\FrameworkBundle\Model\AdminNavigation\BreadcrumbOverrider: ~
 
   Shopsys\FrameworkBundle\Component\Breadcrumb\BreadcrumbResolver:
     factory: ['@Shopsys\FrameworkBundle\Model\Breadcrumb\FrontBreadcrumbResolverFactory', create]
